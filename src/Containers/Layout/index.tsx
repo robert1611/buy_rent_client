@@ -45,10 +45,12 @@ const MainLayout = ({ children, isAuthenticated, updateAuthentication}) => {
           <Auth isAuthenticated={isAuthenticated} updateAuthentication={updateAuthentication} />
         </div>
       </Navbar>
-      <div>
-        {children}
+      <div className="content">
+        <div className="content-inside">
+          {children}
+        </div>
       </div>
-      <div className="page-section page-section-alt">
+      <div className="footer page-section page-section-alt">
           <Container>
             <Row>
               <Col sm={12} md={4}>
