@@ -1,6 +1,7 @@
 import React from 'react';
 import { Navbar, Nav, Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import Auth from '../../components/Auth';
 
 import logo from './../../assets/img/homey.jpg';
 
@@ -40,6 +41,9 @@ const MainLayout = ({ children}) => {
             })
           }
         </Nav>
+        <div className="pull-right">
+          <Auth />
+        </div>
       </Navbar>
       <div>
         {children}

@@ -20,6 +20,11 @@
   max-width: 200px;
 }
 
+.pull-right {
+  position: absolute;
+  right: 10px;
+}
+
 .carousel-root {
   width: 64% !important;
   margin: auto !important;
