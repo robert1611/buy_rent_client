@@ -3,7 +3,7 @@ import { Container, Row, Col, Form, Button, Spinner } from 'react-bootstrap';
 import { server_calls } from './../../api';
 import Result from './Result';
 
-const MortgageCalc = () => {
+const MortgageCalc = ({ isAuthenticated }) => {
 
   const [response, setResponse] = useState({
     success: false,
@@ -121,14 +121,15 @@ const MortgageCalc = () => {
 
               </Form.Group>
 
-              <Button disabled={isLoading} block variant="success" type="submit"  onClick={!isLoading ? submitMortgageCalculation : undefined}>
+              <Button disabled={isLoading || !isAuthenticated} block variant="success" type="submit"  onClick={!isLoading ? submitMortgageCalculation : undefined}>
                 {
                   isLoading &&
                   <Spinner animation="border" role="status">
                     <span className="sr-only">Loading...</span>
                   </Spinner>
                 }
-                Calculate
+                {
+                isAuthenticated ? 'Calculate' : 'Login Before Calculation'}
               </Button>
             </Form>
           </Col>
