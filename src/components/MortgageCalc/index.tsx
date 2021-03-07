@@ -1,9 +1,20 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+import { Container, Row, Col, Form, Button, Spinner } from 'react-bootstrap';
+import { server_calls } from './../../api';
+import Result from './Result';
 
 const MortgageCalc = () => {
 
-  const [response, setResponse] = useState();
+  const [response, setResponse] = useState({
+    success: false,
+    message: 'Fill in the form and submit to get details on Buy vs Rent',
+    data: {}
+  });
+  const [isLoading, setLoading] = useState(false);
+  const [errors, setError] = useState({
+    zip_code: '',
+    credit_score: ''
+  });
 
   const [data, setData] = useState({
     credit_score: undefined,
@@ -15,6 +26,44 @@ const MortgageCalc = () => {
     const { value } = e.currentTarget;
     setData({...data, ...{[k]: value}});
   }
+
+  const submitMortgageCalculation = async (e) => {
+    e.preventDefault();
+
+    setLoading(true);
+
+    let hasError = false;
+    let validationErrors = {
+      zip_code: '',
+      credit_score: ''
+    };
+
+    if(!data.zip_code) {
+      validationErrors['zip_code'] = "Invalid ZipCode";
+      hasError = true;
+    }
+
+    if(!data.credit_score) {
+      validationErrors['credit_score'] = "Invalid Credit Score";
+      hasError = true;
+    }
+
+    setError(validationErrors);
+    if(!hasError) {
+
+      try {
+        const result = await server_calls.mortgageCalc(data);
+        setResponse(result);
+      } catch(er) {
+        alert('Error Calculating Mortgage');
+
+      }
+
+    }
+
+    setLoading(false);
+
+  };
 
 
   return (
@@ -29,6 +78,13 @@ const MortgageCalc = () => {
                   value={data.zip_code} type="text" inputMode="numeric"
                   pattern="^(?(^00000(|-0000))|(\d{5}(|-\d{4})))$" placeholder="Enter Zip Code"
                   onChange={(e) => handleChange('zip_code', e)} />
+                {
+                  errors.zip_code.length > 0 &&
+                  <Form.Text className="text-muted text-err">
+                    {errors.zip_code}
+                  </Form.Text>
+                }
+
                 <Form.Text className="text-muted">
                   At present we only support data for Houston
                 </Form.Text>
@@ -39,6 +95,14 @@ const MortgageCalc = () => {
                 <Form.Control value={data.credit_score} type="number" inputMode="numeric"
                   min="0" max="900" placeholder="Enter Credit Score"
                   onChange={(e) => handleChange('credit_score', e)} />
+
+                {
+                  errors.credit_score.length > 0 &&
+                  <Form.Text className="text-muted text-err">
+                    {errors.credit_score}
+                  </Form.Text>
+                }
+
                 <Form.Text className="text-muted">
                   Enter your Credit Score
                 </Form.Text>
@@ -57,7 +121,13 @@ const MortgageCalc = () => {
 
               </Form.Group>
 
-              <Button variant="success" type="submit">
+              <Button disabled={isLoading} block variant="success" type="submit"  onClick={!isLoading ? submitMortgageCalculation : undefined}>
+                {
+                  isLoading &&
+                  <Spinner animation="border" role="status">
+                    <span className="sr-only">Loading...</span>
+                  </Spinner>
+                }
                 Calculate
               </Button>
             </Form>
@@ -66,11 +136,13 @@ const MortgageCalc = () => {
             <div className="text-center">
               <h3>Result</h3>
             {
-              response ?
-              null
+              response.success === false ?
+                <div>
+                  <p>{response.message}</p>
+                </div>
               :
                 <div>
-                  Fill in the form and submit to get details on Buy vs Rent
+                  <Result data={response.data} />
                 </div>
             }
             </div>

@@ -25,6 +25,10 @@ body {
   height: 120px;
 }
 
+.text-err {
+  color: #ff0000 !important;
+}
+
 .page-section {
   padding-top: 10px;
   padding-bottom: 10px;

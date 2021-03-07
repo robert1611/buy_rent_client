@@ -24,6 +24,16 @@ export const server_calls = {
     }
   },
 
+  mortgageCalc: async (data) => {
+    const response = await axios.post(`${BASE_URL}/`, data);
+    if(response && response.data) {
+      return response.data;
+    } else {
+      alert('Error Calculating Mortgage');
+    }
+
+
+  },
   get: async () => {
 
   }
