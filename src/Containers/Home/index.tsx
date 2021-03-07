@@ -8,13 +8,17 @@ const HomePage = () => {
 
   return (
     <div>
-      <Banner />
-      <Container>
-        <Row className="justify-content-md-center">
-          <HowItWorks />
-        </Row>
-      </Container>
-      <Container>
+      <div>
+        <Banner />
+      </div>
+      <div className="page-section page-section-alt">
+        <Container >
+          <Row className="justify-content-md-center">
+            <HowItWorks />
+          </Row>
+        </Container>
+      </div>
+      <Container className="page-section">
         <Testimonials />
       </Container>
     </div>

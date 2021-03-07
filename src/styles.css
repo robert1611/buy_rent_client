@@ -6,6 +6,20 @@
   color: white;
 }
 
+.page-section {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.page-section-alt {
+  background-color: #efefef;
+}
+
+.footer-logo {
+  max-height: 100px;
+  max-width: 200px;
+}
+
 .carousel-root {
   width: 64% !important;
   margin: auto !important;
