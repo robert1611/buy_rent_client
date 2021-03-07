@@ -41,7 +41,7 @@ const Testimonials = () => {
         testimonials.map(testimonial => {
           return (
             <div>
-              <img src={testimonial.image} />
+              <img src={testimonial.image} alt="testimonial-user" />
               <div className="myCarousel">
                 <h3>{testimonial.name}</h3>
                 <h4>{testimonial.role}</h4>

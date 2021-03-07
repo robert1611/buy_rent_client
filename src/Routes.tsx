@@ -12,7 +12,7 @@ import NotFoundPage from './Containers/NotFound';
 import MainLayout from './Containers/Layout';
 
 
-export default ({childProps}) => {
+const Routes = ({childProps}) => {
   return (
     <Switch>
       <Route exact path='/'>
@@ -33,4 +33,6 @@ export default ({childProps}) => {
       </Route>
     </Switch>
   );
-}
+};
+
+export default Routes;

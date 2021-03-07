@@ -52,7 +52,7 @@ const MainLayout = ({ children, isAuthenticated, updateAuthentication}) => {
           <Container>
             <Row>
               <Col sm={12} md={4}>
-                <img className="footer-logo" src={logo} />
+                <img className="footer-logo" src={logo} alt="footer-logo" />
               </Col>
               <Col sm={12} md={4}>
                 <h4>Links</h4>
