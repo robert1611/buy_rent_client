@@ -5,7 +5,7 @@ import Auth from '../../components/Auth';
 
 import logo from './../../assets/img/homey.jpg';
 
-const MainLayout = ({ children}) => {
+const MainLayout = ({ children, isAuthenticated, updateAuthentication}) => {
 
   const menuItems = [{
     route: '/',
@@ -42,7 +42,7 @@ const MainLayout = ({ children}) => {
           }
         </Nav>
         <div className="pull-right">
-          <Auth />
+          <Auth isAuthenticated={isAuthenticated} updateAuthentication={updateAuthentication} />
         </div>
       </Navbar>
       <div>

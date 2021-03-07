@@ -16,19 +16,19 @@ export default ({childProps}) => {
   return (
     <Switch>
       <Route exact path='/'>
-        <MainLayout>
-          <HomePage />
+        <MainLayout {...childProps}>
+          <HomePage {...childProps} />
         </MainLayout>
       </Route>
       <Route path='/about-us'>
-        <MainLayout>
-          <AboutUsPage />
+        <MainLayout {...childProps}>
+          <AboutUsPage  {...childProps} />
         </MainLayout>
       </Route>
 
       <Route path="*">
-        <MainLayout>
-          <NotFoundPage />
+        <MainLayout {...childProps}>
+          <NotFoundPage  {...childProps} />
         </MainLayout>
       </Route>
     </Switch>
