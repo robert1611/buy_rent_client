@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Row } from 'react-bootstrap';
 import Banner from '../../components/Banner';
 import HowItWorks from '../../components/HowItWorks';
+import MortgageCalc from '../../components/MortgageCalc';
 import Testimonials from '../../components/Testimonials';
 
 const HomePage = () => {
@@ -10,6 +11,11 @@ const HomePage = () => {
     <div>
       <div>
         <Banner />
+      </div>
+      <div className="page-section page-section-form">
+        <Container >
+          <MortgageCalc />
+        </Container>
       </div>
       <div className="page-section page-section-alt">
         <Container >
