@@ -27,10 +27,23 @@ const MainLayout = ({ children}) => {
             />{' '}
           <Link to='/'>Helpful Info Provided</Link>
         </Navbar.Brand>
-        <div>
-          {children}
-        </div>
+        <Nav className="move-nav" activeKey='/'>
+          {
+            menuItems.map(menuItem => {
+              return (
+                <Nav.Item>
+                  <Nav.Link>
+                      <Link to={menuItem.route}>{menuItem.name}</Link>
+                  </Nav.Link>
+                </Nav.Item>
+              )
+            })
+          }
+        </Nav>
       </Navbar>
+      <div>
+        {children}
+      </div>
     </div>
   );
 }
