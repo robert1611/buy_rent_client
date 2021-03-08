@@ -4,28 +4,28 @@ import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 
-import Test1Image from './../../assets/img/test1.png';
-import Test2Image from './../../assets/img/test2.png';
-import Test3Image from './../../assets/img/test3.png';
+import Test1Image from './../../assets/img/vandelay.jpg';
+import Test2Image from './../../assets/img/lebowski.jpg';
+import Test3Image from './../../assets/img/soup_nazi.png';
 
 
 const Testimonials = () => {
 
   const testimonials = [{
-    name: 'Shirley Fultz',
+    name: 'Art Vandelay',
     image: Test1Image,
-    role: 'Designer',
-    content: 'It\'s freeing to be able to catch up on customized news and not bedistracted by a social media element on the same site'
+    role: 'Architect',
+    content: 'This app really helped me decide to go ahead and buy.  I really liked having clear assumptions laid out for insurance, tax, and ongoing maintenance'
   }, {
-    name: 'Theo Sorel',
+    name: 'Jeff Lebowski',
     image: Test2Image,
-    role: 'Engineer',
-    content: 'I enjoy catching up with Fetch on my laptop, or on my phone when I\'m on the go!'
+    role: 'The Dude',
+    content: "I decided to keep renting because getting a job was'nt my thing.  Got in the way of my N'Out trips."
   }, {
-    name: 'Daniel Keystone',
+    name: 'Yev Kassam',
     image: Test3Image,
-    role: 'Realtor',
-    content: 'The simple and intuitive design makes it easy for me use. I highly recommend Fetch to my peers.'
+    role: 'Soup Nazi',
+    content: 'The simple and intuitive design makes it easy for me use. I am usually a pretty demanding guy.'
   }];
 
   return (

@@ -26,7 +26,7 @@ const MainLayout = ({ children, isAuthenticated, updateAuthentication}) => {
               height="30"
               className="d-inline-block align-top"
             />{' '}
-          <Link to='/'>Helpful Info Provided</Link>
+          <Link to='/'>Calculator to Help You Decide - Buy or Rent</Link>
         </Navbar.Brand>
         <Nav className="move-nav" activeKey='/'>
           {
@@ -57,8 +57,8 @@ const MainLayout = ({ children, isAuthenticated, updateAuthentication}) => {
                 <img className="footer-logo" src={logo} alt="footer-logo" />
               </Col>
               <Col sm={12} md={4}>
-                <h4>Links</h4>
-                <ul className="">
+                <h4>Find Us On AirBnB and VRBO</h4>
+                <ul className="footer-links">
                   <li>
                     <a href='/'> Home</a>
                   </li>
@@ -70,10 +70,10 @@ const MainLayout = ({ children, isAuthenticated, updateAuthentication}) => {
               <Col sm={12} md={4}>
                 <h5>Contact Us</h5>
                 <p>
-                  660  Langtown Road, Toledo, OH
+                  123 Main Street, Houston, TX 77092
                 </p>
                 <p>
-                  +01 - 567-246-6833 / +01 - 419-743-2647
+                  346-493-3487
                 </p>
                 <p>
 

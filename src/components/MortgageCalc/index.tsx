@@ -14,12 +14,14 @@ const MortgageCalc = ({ isAuthenticated }) => {
   const [errors, setError] = useState({
     zip_code: '',
     credit_score: ''
+    //years_planned: ''
   });
 
   const [data, setData] = useState({
     credit_score: undefined,
     has_been_bankrupt: 0,
-    zip_code: undefined
+    zip_code: undefined,
+    years_planned: undefined
   });
 
   const handleChange = (k: string, e: any): void => {
@@ -36,6 +38,7 @@ const MortgageCalc = ({ isAuthenticated }) => {
     let validationErrors = {
       zip_code: '',
       credit_score: ''
+      //years_planned: ''
     };
 
     if(!data.zip_code) {
@@ -76,7 +79,7 @@ const MortgageCalc = ({ isAuthenticated }) => {
                 <Form.Label>Zip Code</Form.Label>
                 <Form.Control
                   value={data.zip_code} type="text" inputMode="numeric"
-                  pattern="^(?(^00000(|-0000))|(\d{5}(|-\d{4})))$" placeholder="Enter Zip Code"
+                  pattern="^(?(^00000(|-0000))|(\d{5}(|-\d{4})))$" placeholder="Enter Zip Code for HOUSTON metro area only"
                   onChange={(e) => handleChange('zip_code', e)} />
                 {
                   errors.zip_code.length > 0 &&
@@ -86,14 +89,14 @@ const MortgageCalc = ({ isAuthenticated }) => {
                 }
 
                 <Form.Text className="text-muted">
-                  At present we only support data for Houston
+                  At present we only support data for Houston (zip codes 77002 - 75999)
                 </Form.Text>
               </Form.Group>
 
               <Form.Group controlId="formCreditScore">
                 <Form.Label>Credit Score</Form.Label>
                 <Form.Control value={data.credit_score} type="number" inputMode="numeric"
-                  min="0" max="900" placeholder="Enter Credit Score"
+                  min="0" max="850" placeholder="Enter Credit Score"
                   onChange={(e) => handleChange('credit_score', e)} />
 
                 {
@@ -104,9 +107,31 @@ const MortgageCalc = ({ isAuthenticated }) => {
                 }
 
                 <Form.Text className="text-muted">
-                  Enter your Credit Score
+                  Enter your Credit Score (scale of 0 - 850)
                 </Form.Text>
               </Form.Group>
+
+              <Form.Group controlId="formCreditScore">
+                <Form.Label>How Long Do You Plan To Live Here?</Form.Label>
+                <Form.Control value={data.credit_score} type="number" inputMode="numeric"
+                  min="0" max="850" placeholder="If not sure enter 8 years - the average time a house is owned"
+                  onChange={(e) => handleChange('credit_score', e)} />
+
+                {
+                  errors.credit_score.length > 0 &&
+                  <Form.Text className="text-muted text-err">
+                    {errors.credit_score}
+                  </Form.Text>
+                }
+
+                <Form.Text className="text-muted">
+                  
+                </Form.Text>
+              </Form.Group>
+
+
+
+
 
               <Form.Group controlId="formCreditScore">
                 <Form.Label>Bankrupt in last 4 years?</Form.Label>

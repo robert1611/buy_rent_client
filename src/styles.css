@@ -180,3 +180,8 @@ body {
     border-radius: 50%;
   }
 }
+
+.footer-links {
+
+  text-decoration: none;
+}
