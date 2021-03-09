@@ -2,7 +2,13 @@ import React from 'react';
 import { Navbar, Nav, Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Auth from '../../components/Auth';
-import GithubLogo from './github.png'
+import GithubLogo from './github.png';
+import FacebookLogo from './facebook.png';
+import AirbnbLogo from './airbnb.png';
+import LinkedinLogo from './linkedin.png';
+import EnvelopeLogo from './email.png';
+import PhoneLogo from './phone.png';
+
 
 
 
@@ -22,7 +28,7 @@ const MainLayout = ({ children, isAuthenticated, updateAuthentication}) => {
       <Navbar className="navbar" variant="dark">
         <Navbar.Brand className="navbar-head">
          
-          Calculator to Help You Decide - Buy or Rent
+          Home Calculator - Buy or Rent
         </Navbar.Brand>
         <Nav className="move-nav" activeKey='/'>
           {
@@ -48,16 +54,16 @@ const MainLayout = ({ children, isAuthenticated, updateAuthentication}) => {
         
       </div><footer className="footer">
     <div>
-      <a href="https://www.airbnb.com/users/115702888/listings"target="_blank">AirBnB</a>
-      <span> Listing Page</span>
+      <a href="https://www.airbnb.com/users/115702888/listings"target="_blank">AirBnB   </a>
+      <img src={AirbnbLogo} width="45"></img>
     </div>
     <div>
-      <a href="https://www.vrbo.com/pxe/feed/121.4530204.5134101" target="_blank">VRBO</a>
-      <span> Listing Page</span>
+      <a href="https://www.linkedin.com/in/robert-dupree-40a6a750" target="_blank">LinkedIn  </a>
+      <img src={LinkedinLogo} width="30"></img>
     </div>
     <div>
-      <a href="#">Facebook</a>
-      <span>Symbol</span>
+      <a href="#">Facebook   </a>
+      <img src={FacebookLogo} width="40"></img>
     </div>
     <div>
       <a href="https://github.com/robert1611" target="_blank">Github   </a>
@@ -65,12 +71,12 @@ const MainLayout = ({ children, isAuthenticated, updateAuthentication}) => {
       
     </div>
     <div>
-      <a href="https://mail.google.com/mail/u/?authuser=robert1611@gmail.com">Email</a>
-      <span>robert1611@gmail.com</span>
+      <a href="https://mail.google.com/mail/u/?authuser=robert1611@gmail.com">Email    </a>
+      <img src={EnvelopeLogo} width="30"></img>
     </div>
     <div>
-      <a href="#">Phone</a>
-      <span>346-493-3487</span>
+      <a href="#">Phone    </a>
+      <img src={PhoneLogo} width="30"></img>
     </div>
   </footer>
 
