@@ -2,8 +2,10 @@ import React from 'react';
 import { Navbar, Nav, Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Auth from '../../components/Auth';
+import GithubLogo from './github.png'
 
-import logo from './../../assets/img/homey.jpg';
+
+
 
 const MainLayout = ({ children, isAuthenticated, updateAuthentication}) => {
 
@@ -17,16 +19,10 @@ const MainLayout = ({ children, isAuthenticated, updateAuthentication}) => {
 
   return (
     <div>
-      <Navbar bg="dark" variant="dark">
-        <Navbar.Brand href="#home">
-          <img
-              alt="Homey"
-              src= { logo }
-              width="60"
-              height="30"
-              className="d-inline-block align-top"
-            />{' '}
-          <Link to='/'>Calculator to Help You Decide - Buy or Rent</Link>
+      <Navbar className="navbar" variant="dark">
+        <Navbar.Brand className="navbar-head">
+         
+          Calculator to Help You Decide - Buy or Rent
         </Navbar.Brand>
         <Nav className="move-nav" activeKey='/'>
           {
@@ -49,39 +45,43 @@ const MainLayout = ({ children, isAuthenticated, updateAuthentication}) => {
         <div className="content-inside">
           {children}
         </div>
-      </div>
-      <div className="footer page-section page-section-alt">
-          <Container>
-            <Row>
-              <Col sm={12} md={4}>
-                <img className="footer-logo" src={logo} alt="footer-logo" />
-              </Col>
-              <Col sm={12} md={4}>
-                <h4>Find Us On AirBnB and VRBO</h4>
-                <ul className="footer-links">
-                  <li>
-                    <a href='/'> Home</a>
-                  </li>
-                  <li>
-                    <a href='/about-us'> About Us</a>
-                  </li>
-                </ul>
-              </Col>
-              <Col sm={12} md={4}>
-                <h5>Contact Us</h5>
-                <p>
-                  123 Main Street, Houston, TX 77092
-                </p>
-                <p>
-                  346-493-3487
-                </p>
-                <p>
+        
+      </div><footer className="footer">
+    <div>
+      <a href="https://www.airbnb.com/users/115702888/listings"target="_blank">AirBnB</a>
+      <span> Listing Page</span>
+    </div>
+    <div>
+      <a href="https://www.vrbo.com/pxe/feed/121.4530204.5134101" target="_blank">VRBO</a>
+      <span> Listing Page</span>
+    </div>
+    <div>
+      <a href="#">Facebook</a>
+      <span>Symbol</span>
+    </div>
+    <div>
+      <a href="https://github.com/robert1611" target="_blank">Github   </a>
+      <img src={GithubLogo} width="30"></img>
+      
+    </div>
+    <div>
+      <a href="https://mail.google.com/mail/u/?authuser=robert1611@gmail.com">Email</a>
+      <span>robert1611@gmail.com</span>
+    </div>
+    <div>
+      <a href="#">Phone</a>
+      <span>346-493-3487</span>
+    </div>
+  </footer>
 
-                </p>
-              </Col>
-            </Row>
-          </Container>
-      </div>
+
+
+      
+      
+  
+
+
+
     </div>
   );
 }

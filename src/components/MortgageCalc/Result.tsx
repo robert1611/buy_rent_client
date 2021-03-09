@@ -43,7 +43,7 @@ const Result = ({ data }) => {
 
   return (
     <div>
-      <p> You should <b>`{data.option_result}`</b> the house</p>
+     
 
       <Table striped bordered hover>
         <thead>

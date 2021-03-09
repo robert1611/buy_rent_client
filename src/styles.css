@@ -9,20 +9,27 @@ body {
   padding: 0;
 }
 
+.navbar {
+  background-color: rgb(17, 17, 48);
+  color: white;
+  }
+
+.navbar-head {
+  color: white;
+  margin-right: 100px;
+}
+
 .move.nav {
   transform: translate(57vw, 0vh);
 }
 
 .move-nav a {
   color: white;
+  font: 30px;
 }
 
 .content {
   min-height: calc(100vh - 120px);
-}
-
-.footer {
-  height: 120px;
 }
 
 .text-err {
@@ -40,11 +47,6 @@ body {
 
 .page-section-alt {
   background-color: #efefef;
-}
-
-.footer-logo {
-  max-height: 100px;
-  max-width: 200px;
 }
 
 .pull-right {
@@ -181,7 +183,20 @@ body {
   }
 }
 
-.footer-links {
 
-  text-decoration: none;
+.page-section {
+  font-size: 15px;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.footer {
+
+  color: white;
+  background-color: rgb(17, 17, 48);
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 10px;
+
 }

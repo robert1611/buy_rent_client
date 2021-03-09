@@ -17,10 +17,10 @@ const Testimonials = () => {
     role: 'Architect',
     content: 'This app really helped me decide to go ahead and buy.  I really liked having clear assumptions laid out for insurance, tax, and ongoing maintenance'
   }, {
-    name: 'Jeff Lebowski',
+    name: 'J. Lebowski and W. Sobchak',
     image: Test2Image,
-    role: 'The Dude',
-    content: "I decided to keep renting because getting a job was'nt my thing.  Got in the way of my N'Out trips."
+    role: 'The Dudes',
+    content: "We decided to keep renting because getting a job wasn't our thing.  Got in the way of my N'Out trips."
   }, {
     name: 'Yev Kassam',
     image: Test3Image,

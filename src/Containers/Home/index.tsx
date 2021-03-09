@@ -5,6 +5,7 @@ import HowItWorks from '../../components/HowItWorks';
 import MortgageCalc from '../../components/MortgageCalc';
 import Testimonials from '../../components/Testimonials';
 
+
 const HomePage = ({ isAuthenticated }) => {
 
   return (
@@ -13,7 +14,7 @@ const HomePage = ({ isAuthenticated }) => {
         <Banner />
       </div>
       <div className="page-section page-section-form">
-        <Container >
+        <Container fluid>
           <MortgageCalc isAuthenticated={isAuthenticated} />
         </Container>
       </div>

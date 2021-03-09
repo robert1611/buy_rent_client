@@ -35,7 +35,7 @@ const HowItWorks = () => {
   }, {
     title: 'Roughly Even Own/Rent Split',
     image: Step5Image,
-    content: "This often surpises outsiders who expect home ownership to be at or above the national average of 67%.  Houston has a well supplied apartment market - it's easy to permit, build and attract capital - that means tenants usually have a lot of options",
+    content: "This surpises newcomers who expect Houston home ownership to be in line with national average of 67%.  Houston has a well supplied apartment market - it's easy to permit, build and attract capital - that means tenants usually have a lot of options",
   }, {
     title: "Additional Things to Consider...",
     image: Step6Image,

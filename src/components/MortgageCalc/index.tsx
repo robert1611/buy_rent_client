@@ -8,20 +8,22 @@ const MortgageCalc = ({ isAuthenticated }) => {
   const [response, setResponse] = useState({
     success: false,
     message: 'Fill in the form and submit to get details on Buy vs Rent',
-    data: {}
+    data: {
+      option_result:''
+    }
   });
   const [isLoading, setLoading] = useState(false);
   const [errors, setError] = useState({
     zip_code: '',
-    credit_score: ''
-    //years_planned: ''
+    credit_score: '',
+    years_to_live: ''
   });
 
   const [data, setData] = useState({
     credit_score: undefined,
     has_been_bankrupt: 0,
     zip_code: undefined,
-    years_planned: undefined
+    years_to_live: 8
   });
 
   const handleChange = (k: string, e: any): void => {
@@ -37,8 +39,8 @@ const MortgageCalc = ({ isAuthenticated }) => {
     let hasError = false;
     let validationErrors = {
       zip_code: '',
-      credit_score: ''
-      //years_planned: ''
+      credit_score: '',
+      years_to_live: ''
     };
 
     if(!data.zip_code) {
@@ -50,6 +52,12 @@ const MortgageCalc = ({ isAuthenticated }) => {
       validationErrors['credit_score'] = "Invalid Credit Score";
       hasError = true;
     }
+
+    if(!data.years_to_live) {
+      validationErrors['years_to_live'] = "Invalid Number of Years";
+      hasError = true;
+    }
+
 
     setError(validationErrors);
     if(!hasError) {
@@ -73,7 +81,8 @@ const MortgageCalc = ({ isAuthenticated }) => {
     <div>
       <Container fluid>
         <Row>
-          <Col sm={12} md={6}>
+        <Col sm={12} md={3}>Static Content Here</Col>
+          <Col sm={12} md={3}>
             <Form>
               <Form.Group controlId="formZipCode">
                 <Form.Label>Zip Code</Form.Label>
@@ -111,21 +120,21 @@ const MortgageCalc = ({ isAuthenticated }) => {
                 </Form.Text>
               </Form.Group>
 
-              <Form.Group controlId="formCreditScore">
+              <Form.Group controlId="years_to_live">
                 <Form.Label>How Long Do You Plan To Live Here?</Form.Label>
-                <Form.Control value={data.credit_score} type="number" inputMode="numeric"
-                  min="0" max="850" placeholder="If not sure enter 8 years - the average time a house is owned"
-                  onChange={(e) => handleChange('credit_score', e)} />
+                <Form.Control value={data.years_to_live} type="number" inputMode="numeric"
+                  min="0" max="40" placeholder="If not sure enter 8 years - the average time a house is owned"
+                  onChange={(e) => handleChange('years_to_live', e)} />
 
                 {
-                  errors.credit_score.length > 0 &&
+                  errors.years_to_live.length > 0 &&
                   <Form.Text className="text-muted text-err">
-                    {errors.credit_score}
+                    {errors.years_to_live}
                   </Form.Text>
                 }
 
                 <Form.Text className="text-muted">
-                  
+                If not sure enter 8 years - the average time a house is owned
                 </Form.Text>
               </Form.Group>
 
@@ -158,21 +167,36 @@ const MortgageCalc = ({ isAuthenticated }) => {
               </Button>
             </Form>
           </Col>
-          <Col sm={12} md={6}>
-            <div className="text-center">
-              <h3>Result</h3>
-            {
-              response.success === false ?
-                <div>
-                  <p>{response.message}</p>
-                </div>
-              :
-                <div>
-                  <Result data={response.data} />
-                </div>
-            }
-            </div>
-          </Col>
+          <Col sm={12} md={3}>
+  <div className="text-center">
+  {
+    response.success === false ?
+      <div>
+        <p>{response.message}</p>
+      </div>
+    :
+      <div>
+        <Result data={response.data} />
+      </div>
+  }
+  </div>
+</Col>
+<Col sm={12} md={3}>
+  <div className="text-center">
+    <h3>Result</h3>
+    {
+    response.success === false ?
+      <div>
+        <p></p>
+      </div>
+    :
+      <div>
+        <p> You should <b>{response.data.option_result}</b> the house</p>
+      </div>
+  }
+    
+  </div>
+</Col>
         </Row>
       </Container>
     </div>
