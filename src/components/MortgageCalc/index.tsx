@@ -81,7 +81,10 @@ const MortgageCalc = ({ isAuthenticated }) => {
     <div>
       <Container fluid>
         <Row>
-        <Col sm={12} md={3}>Static Content Here</Col>
+        <Col sm={12} md={3}>
+      
+      
+        </Col>
           <Col sm={12} md={3}>
             <Form>
               <Form.Group controlId="formZipCode">
@@ -183,7 +186,7 @@ const MortgageCalc = ({ isAuthenticated }) => {
 </Col>
 <Col sm={12} md={3}>
   <div className="text-center">
-    <h3>Result</h3>
+    
     {
     response.success === false ?
       <div>
@@ -191,7 +194,7 @@ const MortgageCalc = ({ isAuthenticated }) => {
       </div>
     :
       <div>
-        <p> You should <b>{response.data.option_result}</b> the house</p>
+        <p className="output"> You should <b>{response.data.option_result}</b> the house</p>
       </div>
   }
     

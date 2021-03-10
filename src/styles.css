@@ -28,6 +28,17 @@ body {
   font: 30px;
 }
 
+.family-photo {
+  max-width: 33%;
+  max-height: 100vh;
+}
+
+.write-up {
+  max-width: 66%;
+  max-height: 100vh;
+}
+
+
 .content {
   min-height: calc(100vh - 120px);
 }
@@ -199,4 +210,8 @@ body {
   justify-content: space-around;
   padding-top: 20px;
 
+}
+
+.output {
+  font-size: 30px;
 }
