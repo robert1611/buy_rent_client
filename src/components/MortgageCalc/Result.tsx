@@ -5,19 +5,21 @@ const Result = ({ data }) => {
 
   const fields = [
     {
-      key: 'amortized_transaction_cost',
-      title: 'Amortized Transaction Cost'
+      key: 'house_purchase_value',
+    title: 'House Purchase Value'
+      
     }, {
       key: 'house_purchase_cost_per_month',
       title: 'House Cost per Month'
     },
     {
-      key: 'house_purchase_value',
-      title: 'House Purchase Value'
+      key: 'house_rent_value_per_month',
+    title: 'House Rent Value per Month'
+      
     },
     {
-      key: 'house_rent_value_per_month',
-      title: 'House Rent Value per Month'
+      key: 'amortized_transaction_cost',
+      title: 'Amortized Transaction Cost'
     },
     {
       key: 'insurance_cost',
