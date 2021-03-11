@@ -25,30 +25,34 @@ const MainLayout = ({ children, isAuthenticated, updateAuthentication}) => {
 
   return (
     <div>
-      <Navbar collapseOnSelect expand="lg" className="navbar" variant="dark">
-        <Navbar.Brand className="navbar-head">
-          Home Calculator - Buy or Rent
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-
-        <Nav className="move-nav" activeKey='/'>
-          {
-            menuItems.map(menuItem => {
-              return (
-                <Nav.Item>
-                  <Nav.Link>
-                      <Link to={menuItem.route}>{menuItem.name}</Link>
-                  </Nav.Link>
-                </Nav.Item>
-              )
-            })
-          }
-        </Nav>
-        <div className="navbar-nav move-right">
-          <Auth isAuthenticated={isAuthenticated} updateAuthentication={updateAuthentication} />
-        </div>
-        </Navbar.Collapse>
+      <Navbar className="navbar" variant="dark">
+        <Container fluid={true}>
+          <Row className="full-width" noGutters={true}>
+            <Col md={4} sm={4}>
+              <Navbar.Brand className="navbar-head">
+                Calculator
+              </Navbar.Brand>
+              </Col>
+              <Col md={4} sm={4}>
+              <Nav className="move-nav" activeKey='/'>
+                {
+                  menuItems.map(menuItem => {
+                    return (
+                      <Nav.Item>
+                        <Nav.Link>
+                            <Link to={menuItem.route}>{menuItem.name}</Link>
+                        </Nav.Link>
+                      </Nav.Item>
+                    )
+                  })
+                }
+              </Nav>
+            </Col>
+            <Col md={4} sm={12}>
+              <Auth isAuthenticated={isAuthenticated} updateAuthentication={updateAuthentication} />
+            </Col>
+          </Row>
+        </Container>
       </Navbar>
       <div className="content">
         <div className="content-inside">

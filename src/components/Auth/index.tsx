@@ -7,7 +7,7 @@ const Auth = ({ isAuthenticated, updateAuthentication }) => {
   const authType = localStorage.getItem('authType');
 
   return (
-    <Container className="auth-container">
+    <Container fluid className="auth-container text-right">
 
       {
         isAuthenticated === true
@@ -19,9 +19,10 @@ const Auth = ({ isAuthenticated, updateAuthentication }) => {
           <FbLogout updateAuthentication={updateAuthentication}  />
         )
         :
-        <Row>
-          <Col md={6} className="no-mob-left-padding"><FbLogin updateAuthentication={updateAuthentication} /></Col>
-          <Col md={6} className="no-mob-left-padding"><Login updateAuthentication={updateAuthentication} /></Col>
+        <Row className="full-width" noGutters={true}>
+          <Col md={5} sm={12}>&nbsp;</Col>
+          <Col md={4} sm={6} className="no-mob-left-padding"><FbLogin updateAuthentication={updateAuthentication} /></Col>
+          <Col md={3} sm={6} className="no-mob-left-padding"><Login updateAuthentication={updateAuthentication} /></Col>
         </Row>
 
 
