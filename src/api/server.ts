@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const BASE_URL = `http://localhost:5000`;
+//const BASE_URL = `http://localhost:5000`;
+const BASE_URL = `https://flask-backend-buy-rent.herokuapp.com`;
 
 axios.interceptors.request.use(function (config) {
   const token = localStorage.getItem('accessToken');
