@@ -16,7 +16,6 @@ body {
 
 .navbar-head {
   color: white;
-  margin-right: 100px;
 }
 
 .move.nav {
@@ -56,11 +55,6 @@ body {
 
 .page-section-alt {
   background-color: #efefef;
-}
-
-.pull-right {
-  position: absolute;
-  right: 10px;
 }
 
 .carousel-root {
@@ -162,6 +156,23 @@ body {
   text-align: center;
 }
 
+@media (min-width: 700px) {
+  .navbar-head {
+    margin-right: 100px;
+  }
+
+  .move-right {
+    position: absolute;
+    right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .no-mob-left-padding {
+    padding-left: 0px !important;
+  }
+}
+
 @media only screen and (max-width: 934px) {
   .carousel-root {
     outline: 0;
@@ -211,12 +222,17 @@ body {
   font-size: 30px;
 }
 
+.auth-container {
+  margin-top: 10px;
+}
+
 .facebook-button-cls {
   width: 100px;
   padding: 10px 15px;
   background-color: #4c69ba;
   color: #fff;
   font-size: 14px;
+  margin-bottom: 10px;
 }
 
 .facebook-button-cls i {
