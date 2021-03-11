@@ -12,12 +12,19 @@ const Auth = ({ isAuthenticated, updateAuthentication }) => {
       {
         isAuthenticated === true
         ?
-        (
+        <Row className="full-width" noGutters={true}>
+          <Col md={8} sm={12}>&nbsp;</Col>
+          {
           authType == 'google' ?
-          <Logout updateAuthentication={updateAuthentication}  />
+            <Col md={4} sm={6} className="no-mob-left-padding margin-bottom-5">
+              <Logout updateAuthentication={updateAuthentication}  />
+            </Col>
           :
-          <FbLogout updateAuthentication={updateAuthentication}  />
-        )
+            <Col md={4} sm={6} className="no-mob-left-padding">
+              <FbLogout updateAuthentication={updateAuthentication}  />
+            </Col>
+          }
+        </Row>
         :
         <Row className="full-width" noGutters={true}>
           <Col md={5} sm={12}>&nbsp;</Col>

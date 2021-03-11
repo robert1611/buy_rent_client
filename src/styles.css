@@ -244,3 +244,7 @@ body {
   padding: 0px;
   justify-content: center;
 }
+
+.margin-bottom-5 {
+  padding-bottom: 10px;
+}
