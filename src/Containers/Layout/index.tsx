@@ -25,11 +25,13 @@ const MainLayout = ({ children, isAuthenticated, updateAuthentication}) => {
 
   return (
     <div>
-      <Navbar className="navbar" variant="dark">
+      <Navbar collapseOnSelect expand="lg" className="navbar" variant="dark">
         <Navbar.Brand className="navbar-head">
-         
           Home Calculator - Buy or Rent
         </Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+
         <Nav className="move-nav" activeKey='/'>
           {
             menuItems.map(menuItem => {
@@ -43,15 +45,16 @@ const MainLayout = ({ children, isAuthenticated, updateAuthentication}) => {
             })
           }
         </Nav>
-        <div className="pull-right">
+        <div className="navbar-nav move-right">
           <Auth isAuthenticated={isAuthenticated} updateAuthentication={updateAuthentication} />
         </div>
+        </Navbar.Collapse>
       </Navbar>
       <div className="content">
         <div className="content-inside">
           {children}
         </div>
-        
+
       </div><footer className="footer">
     <div>
       <a href="https://www.airbnb.com/users/115702888/listings"target="_blank">AirBnB   </a>
@@ -68,7 +71,7 @@ const MainLayout = ({ children, isAuthenticated, updateAuthentication}) => {
     <div>
       <a href="https://github.com/robert1611" target="_blank">Github   </a>
       <img src={GithubLogo} width="30"></img>
-      
+
     </div>
     <div>
       <a href="https://mail.google.com/mail/u/?authuser=robert1611@gmail.com">Email    </a>
@@ -82,9 +85,9 @@ const MainLayout = ({ children, isAuthenticated, updateAuthentication}) => {
 
 
 
-      
-      
-  
+
+
+
 
 
 
