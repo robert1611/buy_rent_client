@@ -14,7 +14,8 @@ function Login({updateAuthentication}) {
     await server_calls.userAuth({
       email: res.profileObj.email,
       google_id: res.profileObj.googleId,
-      display_name: `${res.profileObj.givenName} ${res.profileObj.familyName}`
+      display_name: `${res.profileObj.givenName} ${res.profileObj.familyName}`,
+      authType: 'google'
     });
 
     updateAuthentication(true);
@@ -33,7 +34,8 @@ function Login({updateAuthentication}) {
         onSuccess={onSuccess}
         onFailure={onFailure}
         cookiePolicy={'single_host_origin'}
-        isSignedIn={true}
+        isSignedIn={false}
+        autoLoad={false}
       />
     </div>
   );

@@ -210,3 +210,16 @@ body {
 .output {
   font-size: 30px;
 }
+
+.facebook-button-cls {
+  width: 100px;
+  padding: 10px 15px;
+  background-color: #4c69ba;
+  color: #fff;
+  font-size: 14px;
+}
+
+.facebook-button-cls i {
+  font-size: large;
+  margin-right: 10px;
+}
