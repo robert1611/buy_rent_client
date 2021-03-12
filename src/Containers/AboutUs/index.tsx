@@ -28,14 +28,14 @@ const AboutUsPage = () => {
             <ul>
               <li><strong>How long do you plan to live in the house?</strong></li><p>It costs about $30,000 to buy and sell a house.  $3,500 /year on average but $10,000 per year if you only live there 3 years</p>
               <li><strong>How good is your credit?</strong></li><p>A high credit score (720 or better) allows you access to the best rates.  If not, try to qualify for an FHA loan, or if you're a veteran, a VA loan</p>
-              <li><strong>Down payment</strong></li><p>You don't always need 20%. The VA will requires little money down, and FHA only 3.5%. But below 20% requires extra monthly fees called PMI</p>
-              <li><strong>Have funds set aside for emergencies</strong></li><p>Be prepared to lumpy expenses like a roof reapir or new hot water heater</p>
+              <li><strong>Down payment</strong></li><p>You don't always need 20%. The <a href="https://www.va.gov/housing-assistance/home-loans/eligibility/" target="_blank">VA</a> will requires little money down, and <a href="https://www.fha.com/fha_loan_requirements" target="_blank">FHA</a> only 3.5%. But below 20% requires extra monthly fees called <a href="https://www.investopedia.com/ask/answers/09/pmi.asp" target="_blank">PMI</a></p>
+              <li><strong>Have funds set aside for emergencies</strong></li><p>Be prepared to lumpy expenses like a roof repair or new hot water heater</p>
               <li><strong>Stay within budget.</strong></li><p>Whether you buy or rent, try to spend no more than 40% of your income on housing</p>
             </ul>
 
           <p><strong>How is our calculator different than all the rest?</strong></p>
           <ul>
-              <li><strong>Fewer Inputs</strong></li><p>Why enter well known costs that can easily be caculated off your purchase price? <br></br> Based off your purchase price, effective property tax rates are roughly 1.82%, insurance costs 0.8%, ongoing maintence costs 1% , and buy / sell costs 10%</p>
+              <li><strong>Fewer Inputs</strong></li><p>Why enter well known costs that can easily be calculated off your purchase price? <br></br> Based off your purchase price, effective property tax rates are roughly 1.82%, insurance costs 0.8%, ongoing maintenance costs 1% , and buy / sell costs 10%</p>
               <li><strong>You actually get an answer!</strong></li><p>Ever answer two dozen questions only to be told that someone will get back to you. Us too!</p>
               <li><strong>Different Approach</strong></li>
               
