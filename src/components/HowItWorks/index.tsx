@@ -19,7 +19,7 @@ const HowItWorks = () => {
   const cardContents = [{
     title: 'About Houston, TX',
     image: Step1Image,
-    content: "Houston Metro is home to 7.1 million people. The area covers 9,400 square miles, which is larger than New Jersey!!. This gives you a wide range of options, from the piney suburbs north of Houston to beaches and everywhere in between"
+    content: "Houston Metro is home to 7.1 million people. The area covers 9,400 square miles, which is larger than New Jersey!! This gives you a wide range of options, from the piney suburbs north of Houston to beaches and everywhere in between"
   }, {
     title: "Pro and Cons of Buying a Home ",
     image: Step2Image,
@@ -31,15 +31,15 @@ const HowItWorks = () => {
   }, {
     title: 'Check Your Sources',
     image: Step4Image,
-    content: 'Zillow BADLY underesimtates Houston home prices, but its rent estimates are accurate. Median home price info is often misleading. Listed houses are newer and bigger than average housing stock.  The Houston Association of Realtors (HAR) has good data on sales prices and comps',
+    content: 'Zillow BADLY underesimtates Houston home prices. Median home price info is often misleading. Listed houses are newer and bigger than average housing stock.  The <a href="https://www.har.com/" target="_blank">Houston Association of Realtors (HAR)</a> has good data on sales prices and comps',
   }, {
     title: 'Roughly Even Own/Rent Split',
     image: Step5Image,
-    content: "This surpises newcomers who expect Houston home ownership to be in line with national average of 67%.  Houston has a well supplied apartment market - it's easy to permit, build and attract capital - that means tenants usually have a lot of options",
+    content: "This surprises newcomers who expect Houston home ownership to be in line with national average of 67%.  Houston has a well supplied apartment market - it's easy to permit, build and attract capital - that means tenants usually have a lot of options",
   }, {
     title: "Additional Things to Consider...",
     image: Step6Image,
-    content: "Houston has a strong job market and no state income taxes...but has some of the highest property taxes, and pretty epic floods.  Factor in those higher property taxes, insurance costs, and repairs",
+    content: "Houston has a strong job market and no state income taxes...but has some of the highest property taxes, and pretty epic floods like Hurricane Harvey.  Factor in those higher property taxes, insurance costs, and repairs when you make your decisions",
   },
 ]
 
@@ -60,7 +60,7 @@ const HowItWorks = () => {
                     <Card.Img className="card-img" variant="top" src={cardContent.image} />
                     <hr />
                     <Card.Text>
-                      {cardContent.content}
+                    <div dangerouslySetInnerHTML={{__html: cardContent.content}} />
                     </Card.Text>
                   </Card.Body>
                 </Card>
